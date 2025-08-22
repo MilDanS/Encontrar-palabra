@@ -12,5 +12,3 @@ def tabla():
                 );''')
     baseDeDatos.commit()
 tabla()
-
-
