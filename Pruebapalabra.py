@@ -1,1 +1,5 @@
-print("Hola")
+from sqlite3 import *
+from tkinter import messagebox
+from tkinter import *
+
+def agregarpalabras ():
