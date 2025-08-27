@@ -1,5 +1,7 @@
 from sqlite3 import *
-from tkinter import *
+from customtkinter import *
+from customtkinter import CTkTextbox
+
 
 def agregarpalabra():
     nuevap = palabra.get()
@@ -16,19 +18,19 @@ def agregarpalabra():
 baseDeDatos = connect("EncontrarPalabra.db")
 cr =baseDeDatos.cursor()
 
-app = Tk()
+app = CTk()
 app.title("Juego Adivina Palabra")
 
-neword =Label(app, text="Ingrese una palabra")
-descripcion =Label(app, text="Ingrese la descripción")
+neword =CTkLabel(app, text="Ingrese una palabra")
+descripcion =CTkLabel(app, text="Ingrese la descripción")
 
-palabra = Entry(app)
-Descrip = Text(app, width=15, height=3)
+palabra = CTkEntry(app, fg_color="white", text_color="black", width=150)
+Descrip = CTkTextbox(app, width=150, height=50, fg_color="white", text_color="black")
 
-verpalabra= Label(app, text="La palabra es: ")
-verdes = Label(app, text="La descrpción es: ")
+verpalabra= CTkLabel(app, text="La palabra es: ")
+verdes = CTkLabel(app, text="La descrpción es: ")
 
-resul = Button(app, text="Agregar", command=agregarpalabra)
+resul = CTkButton(app, text="Agregar", command=agregarpalabra)
 
 neword.grid(row=0, column=0, pady=5, padx=5)
 descripcion.grid(row=1, column=0, pady=5, padx=5)
