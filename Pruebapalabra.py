@@ -1,7 +1,5 @@
 from sqlite3 import *
-#from tkinter import messagebox
 from tkinter import *
-#from tkinter import ttk
 
 def agregarpalabra():
     nuevap = palabra.get()
