@@ -15,6 +15,9 @@ def agregarpalabra():
             VALUES(?,?)''', (nuevap, des))
     baseDeDatos.commit()
 
+def salir():
+    app.destroy()
+
 baseDeDatos = connect("EncontrarPalabra.db")
 cr =baseDeDatos.cursor()
 
@@ -31,6 +34,7 @@ verpalabra= CTkLabel(app, text="La palabra es: ")
 verdes = CTkLabel(app, text="La descrpción es: ")
 
 resul = CTkButton(app, text="Agregar", command=agregarpalabra)
+Salir=CTkButton(app, text="Salir", command=salir)
 
 neword.grid(row=0, column=0, pady=5, padx=5)
 descripcion.grid(row=1, column=0, pady=5, padx=5)
@@ -39,5 +43,6 @@ Descrip.grid(row=1, column=1, pady=5, padx=5)
 resul.grid(row=2, column=0, pady=5, padx=5)
 verpalabra.grid(row=3, column=0, padx=5, pady=5)
 verdes.grid(row=4, column=0, padx=5, pady=5)
+Salir.grid(row=2, column=1, padx=5, pady=5)
 
 app.mainloop()
