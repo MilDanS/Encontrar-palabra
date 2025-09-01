@@ -61,16 +61,15 @@ jugarb = Button(app, text="Jugar", command=jugar)
 int = Button(app, text="Verificar", command=verificar)
 next = Button(app, text="Salir", command=salir)
 
-Label(app, text="Ingresa la palabra:").grid(row=2, column=0, padx=5, pady=5)
+Label(app, text="Ingresa la palabra:").grid(row=1, column=0, padx=5, pady=5)
 
 Label(app, text="Descripción:").grid(row=0, column=0, padx=5, pady=5)
 
-juego.grid(row=2, column=0, columnspan=3, pady=5, padx=5)
+juego.grid(row=1, column=0, columnspan=3, pady=5, padx=5)
 descrip.grid(row=0, column=1, pady=5, padx=5)
-#intentos
-jugarb.grid(row=3, column=0, pady=5, padx=5)
-int.grid(row=3, column=1,padx=5, pady=5)
-next.grid(row=3, column=2, pady=5, padx=5)
+jugarb.grid(row=2, column=0, pady=5, padx=5)
+int.grid(row=2, column=1,padx=5, pady=5)
+next.grid(row=2, column=2, pady=5, padx=5)
 
 app.mainloop()
 
