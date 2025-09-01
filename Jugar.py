@@ -14,16 +14,20 @@ Fallos = 0
 Word = " "
 Desc = " "
 
+def salir():
+    app.destroy()
+
 def verificar ():
     global Intentos, Fallos
 
     entrada = juego.get().strip()
 
-    if entrada == " ":
+    if entrada == "":
         messagebox.showwarning("Entrada vacía", "Por favor, escribe una palabra.")
         return
     elif entrada.lower() == Word.lower():
         messagebox.showinfo("¡Ganaste!", f"Felicidades, la palabra era: {Word}")
+        juego.delete(0, END)
     else:
         Intentos -= 1
         Fallos += 1
@@ -55,12 +59,18 @@ juego = Entry(app)
 descrip = Label(app, text=" ")
 jugarb = Button(app, text="Jugar", command=jugar)
 int = Button(app, text="Verificar", command=verificar)
+next = Button(app, text="Salir", command=salir)
 
-juego.grid(row= 5, column=5, pady=5, padx=5)
-descrip.grid(row= 6, column=5, pady=5, padx=5)
-jugarb.grid(row= 7, column=5, pady=5, padx=5)
-int.grid(row=8, column=5,padx=5, pady=5)
+Label(app, text="Ingresa la palabra:").grid(row=2, column=0, padx=5, pady=5)
 
+Label(app, text="Descripción:").grid(row=0, column=0, padx=5, pady=5)
+
+juego.grid(row=2, column=0, columnspan=3, pady=5, padx=5)
+descrip.grid(row=0, column=1, pady=5, padx=5)
+#intentos
+jugarb.grid(row=3, column=0, pady=5, padx=5)
+int.grid(row=3, column=1,padx=5, pady=5)
+next.grid(row=3, column=2, pady=5, padx=5)
 
 app.mainloop()
 
