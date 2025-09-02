@@ -6,9 +6,6 @@ from customtkinter import CTkTextbox
 def agregarpalabra():
     nuevap = palabra.get()
     des = str(Descrip.get("1.0", "end"))
-    verpalabra.configure(text=f"La palabra es: {nuevap}")
-    verdes.configure(text=f"La descripción es: {des}")
-
 
     cr.execute('''
             INSERT INTO palabras(nombre, descripcion)
@@ -30,9 +27,6 @@ descripcion =CTkLabel(app, text="Ingrese la descripción")
 palabra = CTkEntry(app, fg_color="white", text_color="black", width=150)
 Descrip = CTkTextbox(app, width=150, height=50, fg_color="white", text_color="black")
 
-verpalabra= CTkLabel(app, text="La palabra es: ")
-verdes = CTkLabel(app, text="La descrpción es: ")
-
 resul = CTkButton(app, text="Agregar", command=agregarpalabra)
 Salir=CTkButton(app, text="Salir", command=salir)
 
@@ -41,8 +35,6 @@ descripcion.grid(row=1, column=0, pady=5, padx=5)
 palabra.grid(row=0, column=1, pady=5, padx=5)
 Descrip.grid(row=1, column=1, pady=5, padx=5)
 resul.grid(row=2, column=0, pady=5, padx=5)
-verpalabra.grid(row=3, column=0, padx=5, pady=5)
-verdes.grid(row=4, column=0, padx=5, pady=5)
 Salir.grid(row=2, column=1, padx=5, pady=5)
 
 app.mainloop()
