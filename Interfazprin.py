@@ -14,8 +14,8 @@ jugar = CTkButton(app, text="Jugar", command=lomalo)
 salir = CTkButton(app, text="Salir", command=Salir)
 
 acciones.grid(row=0, column=0, pady=5, padx=5)
-jugar.grid(row=0, column=1, pady=5, padx=5)
-salir.grid(row=0, column=2, pady=5, padx=5)
+jugar.grid(row=1, column=0, pady=5, padx=5)
+salir.grid(row=2, column=0, pady=5, padx=5)
 
 
 app.mainloop()
