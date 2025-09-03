@@ -9,7 +9,7 @@ app.resizable(width=True, height=True)
 def Salir ():
     app.destroy()
 
-acciones = CTkButton(app, text="Acciones", command=lobueno)
+acciones = CTkButton(app, text="Agregar palabra", command=lobueno)
 jugar = CTkButton(app, text="Jugar", command=lomalo)
 salir = CTkButton(app, text="Salir", command=Salir)
 

@@ -19,7 +19,7 @@ def lomalo ():
         app.destroy()
 
     def verificar ():
-        global Intentos, Fallos
+        global Intentos, Fallos, Word
 
         entrada = juego.get().strip()
 
